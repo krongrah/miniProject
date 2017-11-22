@@ -17,12 +17,15 @@ import java.util.Map;
     private String name;
     private String address;
     private Map<Integer, Sensor>sensors=new HashMap<>();
+    private Map<Integer, Log>sensorLogs=new HashMap<>();
+    
     
     Building(String name, String address, Sensor... sensors){
     this.name=name;
     this.address=address;
     for(Sensor sensor: sensors){
     this.sensors.put(this.sensors.size()+1, sensor);
+    this.sensorLogs.put(this.sensorLogs.size()+1, new Log());
     }
     }
     
@@ -41,10 +44,14 @@ import java.util.Map;
     void addsensors(Sensor... sensors){
     for(Sensor sensor: sensors){
     this.sensors.put(this.sensors.size()+1, sensor);
+    this.sensorLogs.put(this.sensorLogs.size()+1, new Log());
+    
     }
     }
-    void removeSensor(int sensor){
-    sensors.remove(sensor);
+    void storeData(){
+    for(int i=1;i<sensors.size()+1;i++){
+    this.sensorLogs.get(i).addMeasurement(this.sensors.get(i).getMeasurement());
+    }
     }
     
     
