@@ -9,13 +9,6 @@ package BackEnd;
  *
  * @author Krongrah
  */
-public abstract class Sensor {
-    private double measurement;
-    
-    Sensor(){
-    }
-    
-    double getMeasurement(){
-        return measurement;
-    }
+public class HumiditySensor extends Sensor{
+    HumiditySensor(){}
 }

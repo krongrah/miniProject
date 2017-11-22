@@ -34,11 +34,18 @@ import java.util.Map;
     return address;
     }
     
-    int getMeasurement(int sensor){
-    return sensors.get(sensor).getMeasurement;
+    double getMeasurement(int sensor){
+    return sensors.get(sensor).getMeasurement();
     }
     
-    
+    void addsensors(Sensor... sensors){
+    for(Sensor sensor: sensors){
+    this.sensors.put(this.sensors.size()+1, sensor);
+    }
+    }
+    void removeSensor(int sensor){
+    sensors.remove(sensor);
+    }
     
     
 }
