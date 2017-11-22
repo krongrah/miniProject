@@ -19,7 +19,7 @@ public class BackEndFacade implements IBackEnd{
     
 
     public void getbuildings(){
-    
+        System.out.println("test");
     }
     
     public void getMeasurements(){}
