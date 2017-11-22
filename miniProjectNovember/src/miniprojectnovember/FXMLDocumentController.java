@@ -5,6 +5,10 @@
  */
 package miniprojectnovember;
 
+import Acquaintance.IBackEnd;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -17,10 +21,12 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author jensd
+ * @author Krongrah
  */
 public class FXMLDocumentController implements Initializable {
 
+    IBackEnd backEnd;
+    
     @FXML
     private TextField nameField;
     @FXML
@@ -39,14 +45,25 @@ public class FXMLDocumentController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @Override
+@Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+        OutputStream o = new OutputStream() {
+            @Override
+            public void write(int b) throws IOException {
+                textOutput.appendText(String.valueOf((char) b));
+            }
+        };
+        System.setOut(new PrintStream(o, true));
+        
+    }  
+        
+    void importBackEnd(IBackEnd backEnd){
+    this.backEnd=backEnd;
+    }   
 
     @FXML
     private void buttonClick(ActionEvent event) {
-        
     }
     
 }
