@@ -5,6 +5,7 @@
  */
 package BackEnd;
 
+import Acquaintance.IBackEnd;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,9 +13,9 @@ import java.util.Map;
  *
  * @author Krongrah
  */
-public class BackEndFacade {
+public class BackEndFacade implements IBackEnd{
     private Map<String,Building> buildings=new HashMap<>();
-    BackEndFacade(){}
+    public BackEndFacade(){}
     
 
     public void getbuildings(){
