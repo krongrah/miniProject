@@ -5,6 +5,10 @@
  */
 package FrontEnd;
 
+import Acquaintance.IBackEnd;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,6 +22,26 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        OutputStream o = new OutputStream() {
+            @Override
+            public void write(int b) throws IOException {
+                textOutput.appendText(String.valueOf((char) b));
+            }
+        };
+        System.setOut(new PrintStream(o, true));
+        
+    }  
+        
+    void importBackEnd(IBackEnd backEnd){
+    this.backEnd=backEnd;
+    }
+    
+    
+    
+    
     @FXML
     private Label label;
     
@@ -27,9 +51,6 @@ public class FXMLDocumentController implements Initializable {
         label.setText("Hello World!");
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
     
 }
