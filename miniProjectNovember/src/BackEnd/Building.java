@@ -5,10 +5,40 @@
  */
 package BackEnd;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Krongrah
  */
-public class Building {
+    class Building {
+  
+    private String name;
+    private String address;
+    private Map<Integer, Sensor>sensors=new HashMap<>();
+    
+    Building(String name, String address, Sensor... sensors){
+    this.name=name;
+    this.address=address;
+    for(Sensor sensor: sensors){
+    this.sensors.put(this.sensors.size()+1, sensor);
+    }
+    }
+    
+    String getName(){
+    return name;
+    }
+    
+    String getAddress(){
+    return address;
+    }
+    
+    int getMeasurement(int sensor){
+    return sensors.get(sensor).getMeasurement;
+    }
+    
+    
+    
     
 }
