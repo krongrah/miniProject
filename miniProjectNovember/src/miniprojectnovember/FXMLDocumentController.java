@@ -46,6 +46,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void buttonClick(ActionEvent event) {
+        
     }
     
 }
