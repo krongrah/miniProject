@@ -12,7 +12,7 @@ package Acquaintance;
  * @author Krongrah
  */
 public interface IBackEnd {
-    public void getbuildings();
+    public void getBuildings();
     
     
     public void getMeasurements();

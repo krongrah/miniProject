@@ -5,6 +5,7 @@
  */
 package FrontEnd;
 
+import Acquaintance.IBackEnd;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +16,8 @@ import javafx.stage.Stage;
  *
  * @author Krongrah
  */
-public class MiniProjectNovember extends Application {
+public class Initializer extends Application {
+    static IBackEnd backEnd;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,8 +32,10 @@ public class MiniProjectNovember extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public void begin(String[] args) {
         launch(args);
     }
-    
+    public void injectBackEnd(IBackEnd backEnd){
+    this.backEnd=backEnd;
+    }
 }

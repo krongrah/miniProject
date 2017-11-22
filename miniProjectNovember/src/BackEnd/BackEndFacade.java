@@ -18,7 +18,7 @@ public class BackEndFacade implements IBackEnd{
     public BackEndFacade(){}
     
 
-    public void getbuildings(){
+    public void getBuildings(){
         System.out.println("test");
     }
     

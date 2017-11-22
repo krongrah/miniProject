@@ -13,18 +13,20 @@ import Acquaintance.IFrontEnd;
  * @author Krongrah
  */
 public class FrontEndFacade implements IFrontEnd{
-   
+   IBackEnd backEnd;
     public FrontEndFacade(){}
 
     @Override
     public void injectBackEnd(IBackEnd backEnd) {
-    //todo
+    this.backEnd=backEnd;
     }
     
 
     @Override
     public void begin(String[] args) {
-        
+       Initializer initializer=new Initializer();
+       initializer.injectBackEnd(backEnd);
+       initializer.begin(args);
     }
     
     
