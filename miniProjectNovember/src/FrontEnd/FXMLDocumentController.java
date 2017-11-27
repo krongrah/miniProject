@@ -57,7 +57,7 @@ public class FXMLDocumentController implements Initializable {
         OutputStream o = new OutputStream() {
             @Override
             public void write(int b) throws IOException {
-                textOutput.setText(String.valueOf((char) b));
+                textOutput.appendText(String.valueOf((char) b));
             }
         };
         System.setOut(new PrintStream(o, true));
@@ -78,6 +78,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void mouseClick(MouseEvent event) {
+        System.err.println("item clicked");
         backEnd.getMeasurements(buildingList.getSelectionModel().getSelectedItem());
         
     }
