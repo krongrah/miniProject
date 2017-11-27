@@ -6,7 +6,9 @@
 package BackEnd;
 
 import Acquaintance.IBackEnd;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,8 +21,8 @@ public class BackEndFacade implements IBackEnd{
     public BackEndFacade(){}
     
 
-    public Set<String> getBuildings(){
-        return buildings.keySet();
+    public List<String> getBuildings(){
+        return new ArrayList(buildings.keySet());
     }
     
     public void getMeasurements(){}
