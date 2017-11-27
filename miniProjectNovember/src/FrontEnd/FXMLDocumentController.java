@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -56,7 +57,7 @@ public class FXMLDocumentController implements Initializable {
         OutputStream o = new OutputStream() {
             @Override
             public void write(int b) throws IOException {
-                textOutput.appendText(String.valueOf((char) b));
+                textOutput.setText(String.valueOf((char) b));
             }
         };
         System.setOut(new PrintStream(o, true));
@@ -73,6 +74,12 @@ public class FXMLDocumentController implements Initializable {
         buildingList.setItems(FXCollections.observableList(backEnd.getBuildings()));
 
 
+    }
+
+    @FXML
+    private void mouseClick(MouseEvent event) {
+        backEnd.getMeasurements(buildingList.getSelectionModel().getSelectedItem());
+        
     }
 
    

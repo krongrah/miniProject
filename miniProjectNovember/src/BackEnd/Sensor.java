@@ -10,12 +10,12 @@ package BackEnd;
  * @author Krongrah
  */
 public abstract class Sensor {
-    private double measurement;
+    private double measurement=5;
     
     Sensor(){
     }
     
-    double getMeasurement(){
+    public double getMeasurement(){
         return measurement;
     }
 }

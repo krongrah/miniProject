@@ -5,8 +5,11 @@
  */
 package BackEnd;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  *
@@ -27,7 +30,6 @@ import java.util.Map;
     this.sensors.put(this.sensors.size()+1, sensor);
     this.sensorLogs.put(this.sensorLogs.size()+1, new Log());
     }
-        System.out.println("");
     }
     
     String getName(){
@@ -40,6 +42,22 @@ import java.util.Map;
     
     double getMeasurement(int sensor){
     return sensors.get(sensor).getMeasurement();
+    }
+    void getMeasurements(){
+        
+        for(Entry entry:sensors.entrySet()){
+        if(entry.getValue() instanceof CO2Sensor){
+            CO2Sensor test = (CO2Sensor)entry.getValue();
+            System.out.println("CO2 sensor "+entry.getKey()+" has measured "+((CO2Sensor)entry.getValue()).getMeasurement()+"ppm.");
+        }}
+        for(Entry entry:sensors.entrySet()){
+        if(entry.getValue() instanceof HumiditySensor){
+        System.out.println("Humidity sensor "+entry.getKey()+" has measured "+((HumiditySensor)entry.getValue()).getMeasurement()+"%.");
+        }}
+        for(Entry entry:sensors.entrySet()){
+        if(entry.getValue() instanceof TempSensor){    
+        System.out.println("Temperature sensor "+entry.getKey()+" has measured "+((TempSensor)entry.getValue()).getMeasurement()+" degrees.");
+        }}
     }
     
     void addsensors(Sensor... sensors){

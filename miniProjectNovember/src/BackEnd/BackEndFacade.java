@@ -25,7 +25,14 @@ public class BackEndFacade implements IBackEnd{
         return new ArrayList(buildings.keySet());
     }
     
-    public void getMeasurements(){}
+    /**
+     *
+     * @param building
+     */
+    @Override
+    public void getMeasurements(String building){
+    buildings.get(building).getMeasurements();
+    }
     
     public void addBuilding(String name,String address, int temp, int humidity, int CO2){
         Sensor[] sensors=new Sensor[temp+humidity+CO2];
@@ -40,7 +47,6 @@ public class BackEndFacade implements IBackEnd{
         sensors[k]=new CO2Sensor();
         }
     buildings.put(name, new Building(name, address, sensors));
-        System.out.println(buildings.keySet());
     }
     
     public void removeBuilding(String name){

@@ -5,6 +5,7 @@
  */
 package Acquaintance;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ public interface IBackEnd {
     public List<String> getBuildings();
     
     
-    public void getMeasurements();
+    public void getMeasurements(String building);
     
     public void addBuilding(String name,String address, int temp, int humidity, int CO2);
 
