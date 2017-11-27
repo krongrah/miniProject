@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,7 +44,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextArea textOutput;
     @FXML
-    private ListView<?> buildingList;
+    private ListView<String> buildingList;
 
     /**
      * Initializes the controller class.
@@ -68,6 +69,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void buttonClick(ActionEvent event) {
         backEnd.addBuilding(nameField.getText(), addresseField.getText(),Integer.parseInt(tempSensorField.getText()),Integer.parseInt(humSensorField.getText()),Integer.parseInt(CO2SensorField.getText()));
+        buildingList.setItems(FXCollections.observableSet(backEnd.getBuildings()));
     }
     
 }

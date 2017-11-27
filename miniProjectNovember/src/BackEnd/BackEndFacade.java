@@ -8,6 +8,7 @@ package BackEnd;
 import Acquaintance.IBackEnd;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -18,8 +19,8 @@ public class BackEndFacade implements IBackEnd{
     public BackEndFacade(){}
     
 
-    public void getBuildings(){
-        System.out.println("test");
+    public Set<String> getBuildings(){
+        return buildings.keySet();
     }
     
     public void getMeasurements(){}

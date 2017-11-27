@@ -5,6 +5,8 @@
  */
 package Acquaintance;
 
+import java.util.Set;
+
 
 
 /**
@@ -12,7 +14,7 @@ package Acquaintance;
  * @author Krongrah
  */
 public interface IBackEnd {
-    public void getBuildings();
+    public Set<String> getBuildings();
     
     
     public void getMeasurements();
