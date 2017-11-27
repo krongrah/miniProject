@@ -37,6 +37,7 @@ public class BackEndFacade implements IBackEnd{
         sensors[k]=new CO2Sensor();
         }
     buildings.put(name, new Building(name, address, sensors));
+        System.out.println(buildings.keySet());
     }
     
     public void removeBuilding(String name){

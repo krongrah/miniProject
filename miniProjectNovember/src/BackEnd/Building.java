@@ -27,6 +27,7 @@ import java.util.Map;
     this.sensors.put(this.sensors.size()+1, sensor);
     this.sensorLogs.put(this.sensorLogs.size()+1, new Log());
     }
+        System.out.println("");
     }
     
     String getName(){

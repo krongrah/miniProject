@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -41,6 +42,8 @@ public class FXMLDocumentController implements Initializable {
     private Button addButton;
     @FXML
     private TextArea textOutput;
+    @FXML
+    private ListView<?> buildingList;
 
     /**
      * Initializes the controller class.
@@ -64,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void buttonClick(ActionEvent event) {
-        backEnd.getBuildings();
+        backEnd.addBuilding(nameField.getText(), addresseField.getText(),Integer.parseInt(tempSensorField.getText()),Integer.parseInt(humSensorField.getText()),Integer.parseInt(CO2SensorField.getText()));
     }
     
 }
