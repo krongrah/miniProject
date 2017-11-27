@@ -69,7 +69,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void buttonClick(ActionEvent event) {
         backEnd.addBuilding(nameField.getText(), addresseField.getText(),Integer.parseInt(tempSensorField.getText()),Integer.parseInt(humSensorField.getText()),Integer.parseInt(CO2SensorField.getText()));
+    }
+
+    @FXML
+    private void test(ActionEvent event) {
         buildingList.setItems(FXCollections.observableSet(backEnd.getBuildings()));
+
     }
     
 }
