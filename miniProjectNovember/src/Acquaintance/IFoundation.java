@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Krongrah
  */
 public interface IFoundation {
-   void saveHiScoreList(ArrayList<String> list);
-   ArrayList<String> getHiScoreList();
+   void saveData(ArrayList<String> list);
+   ArrayList<String> getData();
 
 }
